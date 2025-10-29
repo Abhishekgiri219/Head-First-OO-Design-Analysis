@@ -8,6 +8,7 @@ public class GuitarSpec {
     private Wood topWood;
     private Type type;
     private String model;
+    private int numStrings = 6;
 
     public GuitarSpec(Builder builder, Wood backWood, Wood topWood, Type type, String model){
         this.builder = builder;
@@ -15,6 +16,15 @@ public class GuitarSpec {
         this.topWood = topWood;
         this.type = type;
         this.model = model;
+    }
+
+    public GuitarSpec(Builder builder, Wood backWood, Wood topWood, Type type, String model, int numStrings){
+        this.builder = builder;
+        this.backWood = backWood;
+        this.topWood = topWood;
+        this.type = type;
+        this.model = model;
+        this.numStrings = numStrings;
     }
 
     @Override
@@ -59,6 +69,10 @@ public class GuitarSpec {
         this.model = model;
     }
 
+    public void setNumStrings(int numStrings){
+        this.numStrings = numStrings;
+    }
+
     public Builder getBuilder(){
         return builder;
     }
@@ -77,5 +91,9 @@ public class GuitarSpec {
 
     public String getModel(){
         return model;
+    }
+
+    public int getNumStrings(){
+        return numStrings;
     }
 }
